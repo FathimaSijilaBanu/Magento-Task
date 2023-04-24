@@ -1,0 +1,8 @@
+<?php
+/** @var \Magento\Catalog\Block\Product\View $block */
+$_product = $block->getProduct();
+?>
+<div class="custom-data">
+    <h2><?php echo $_product->getResource()->getAttribute('custom_datapatch')->getStoreLabel(); ?></h2>
+    <p><?php echo $_product->getData('custom_datapatch'); ?></p>
+</div>

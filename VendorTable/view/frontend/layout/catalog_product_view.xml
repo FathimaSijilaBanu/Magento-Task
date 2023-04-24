@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- <referenceContainer name="product.info.main">
+            <block class="Magento\Catalog\Block\Product\View" name="custom.attribute" template="Codilar_VendorTable::product/custom_attribute.phtml" />
+        </referenceContainer> -->
+        <referenceContainer name="product.info.main">
+    <block class="Codilar\VendorTable\Block\Product\View" name="product.custom" template="Codilar_VendorTable::product/view/custom.phtml" />
+</referenceContainer>
+    </body>
+</page>
