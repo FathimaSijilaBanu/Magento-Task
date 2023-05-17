@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+            	<!-- Data Source will be mentioned in listing xml -->
+                <item name="vendortable_listing_data_source" xsi:type="string">Codilar\VendorTable\Model\ResourceModel\Vendor\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Codilar\VendorTable\Model\ResourceModel\Vendor\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+        	<!-- Table name to insert data and listing data -->
+            <argument name="mainTable" xsi:type="string">vendor_tb</argument>
+            <!-- Resource model name -->
+            <argument name="resourceModel" xsi:type="string">Codilar\VendorTable\Model\ResourceModel\Vendor</argument>
+        </arguments>
+    </virtualType>
+</config>

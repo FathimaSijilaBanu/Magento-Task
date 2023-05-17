@@ -1,0 +1,32 @@
+<?php
+/** @var $block Codilar\CustomTable\Block\VendorInfo */
+$vendorInfoCollection = $block->getVendorInfoCollection();
+if (is_array($vendorInfoCollection)):
+    $pageSize = $block->getPageSize();
+    ?>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Vendor ID</th>
+                <th>Vendor Name</th>
+                <th>Vendor Description</th>
+                <th>Vendor Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php $count = 0; ?>
+            <?php foreach ($vendorInfoCollection as $vendorInfo): ?>
+                <?php if ($count >= $pageSize) break; ?>
+                <tr>
+                    <td><?php echo $vendorInfo->getId(); ?></td>
+                    <td><?php echo $vendorInfo->getName(); ?></td>
+                    <td><?php echo $vendorInfo->getDescription(); ?></td>
+                    <td><?php echo $vendorInfo->getEmail(); ?></td>
+                </tr>
+                <?php $count++; ?>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php else: ?>
+    <p>No vendor information available</p>
+<?php endif; ?>

@@ -1,0 +1,60 @@
+.imagemodalbox,.imagemodalbox2
+{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #000;
+    display: none;
+}
+.modalheader,.modalbody
+{
+    height: auto;
+    width: 80%;
+    position: relative;
+    margin: auto;
+}
+.modalheader span{
+    text-align: right;
+    color: white;
+    font-size: 45px;
+    cursor: pointer;
+    display: block;
+    font-weight: 800;
+}
+.modalheader span:hover{
+    opacity: 0.7;
+}
+.modalbody{
+    text-align: center;
+    background-color: black;
+    margin-top: 150px;
+}
+.thumbnail
+{
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+}
+table{
+    text-align: center;
+    margin-left: 500px;
+    margin-top: 150px;
+    font-size: 16px;
+}
+p
+{
+font-size: 26px;
+}
+#modalImage
+{
+    margin-top: 150px;
+}
+.close
+{
+    width:80px;
+    height:40px;
+    margin-left:1590px;
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Codilar_CustomTable::customtable"
+             title="Vendor Table"
+             module="Codilar_CustomTable"
+             sortOrder="95"
+             resource="Codilar_CustomTable::customtable"/>
+
+        <add id="Codilar_CustomTable::customtable_manage"
+             title="Manage Vendors"
+             module="Codilar_CustomTable"
+             parent="Codilar_CustomTable::customtable"
+             action="admincustomtable/vendor/index"
+             sortOrder="10"
+             resource="Codilar_CustomTable::customtable_manage"/>
+    </menu>
+</config>

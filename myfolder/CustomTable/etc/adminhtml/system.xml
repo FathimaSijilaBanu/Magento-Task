@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="custom_table" translate="label" sortOrder="10">
+            <label>Custom Table</label>
+        </tab>
+        <section id="vendor_info" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Vendor Information</label>
+            <tab>custom_table</tab>
+            <resource>Codilar_CustomTable::vendor_info_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="records_to_display" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Number of Records to Display</label>
+                    <source_model>Codilar\CustomTable\Model\Config\Source\RecordsToDisplay</source_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

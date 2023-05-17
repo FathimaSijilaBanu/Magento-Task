@@ -1,0 +1,234 @@
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color:#DF2E38;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  #product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .product {
+    background-color: white;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0; 
+  }
+  
+  .product img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+  
+  .product h2 {
+    font-size: 1.2rem;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .product .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .product .description {
+    font-size: 0.9rem;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    max-height: 100px;
+    overflow-y: auto;
+  }
+  
+  .product button {
+    background-color: #DF2E38;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: auto;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .product button:hover {
+    background-color:#DF2E38;
+  }
+  
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  color: white;
+  z-index: 999;
+}
+
+.modal img {
+  width: 100%;
+  height:300px;
+  margin-bottom: 20px;
+}
+
+.modal h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.modal p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.modal button {
+  background-color: #DF2E38;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.modal button:hover {
+  background-color: #DF2E38;
+}
+
+
+  .product-preview-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .product-preview-popup.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-preview-container {
+    background-color: white;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    height: 80%;
+    max-height: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .preview-image-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .preview-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .preview-info-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .preview-info-container h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .preview-info-container .price {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .preview-info-container .description {
+    font-size: 1rem;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  .preview-info-container button {
+    background-color: #DF2E38;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: auto;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .preview-info-container button:hover {
+    background-color: #AA232F;
+  }
+
+

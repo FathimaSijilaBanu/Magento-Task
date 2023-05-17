@@ -1,0 +1,7 @@
+<?php $_product = $block->getProduct(); ?>
+<?php $_customAttributeValue = $_product->getCustomAttribute(); ?>
+<?php if ($_customAttributeValue): ?>
+    <div class="custom-attribute">
+        <?php echo $_customAttributeValue->getValue(); ?>
+    </div>
+<?php endif; ?>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+    <style>
+     body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            background-color: #f7f7f7;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], #mobile {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+        input[type="submit"] {
+            background-color: darkred;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        h2
+                {
+                    text-align: center;
+                }
+    </style>
+   
+</head>
+<body>
+    <h2>STUDENT REGISTRATION FORM</h2>
+    <form id="registration-form" method="POST" enctype="multipart/form-data">
+        <label>Name:</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <label>Email:</label>
+        <input type="email" id="email" name="email">
+        <span id="email-error" class="error"></span>
+        <br>
+        <label>Mobile:</label>
+        <input type="tel" id="mobile" name="mobile">
+        <span id="mobile-error" class="error"></span>
+        <br>
+        <label>Profile Photo:</label>
+        <input type="file" id="photo" name="photo" accept=".png, .jpg, .jpeg">
+        <br>
+        <input type="submit" value="Submit" name="submit">
+    </form>
+    <script src="registration.js"></script>
+</body>
+</html>
+
