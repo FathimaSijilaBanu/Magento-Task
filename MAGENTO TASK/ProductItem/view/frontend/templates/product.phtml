@@ -1,0 +1,26 @@
+<?php
+
+$categoryId = 3;
+
+$productBlock = $block->getLayout()->createBlock('Codilar\ProductItem\Block\Product');
+$productCollection = $productBlock->getCategoryProducts($categoryId);
+$count = 0;
+echo "<div style='display: flex; flex-wrap: wrap;'>";
+foreach ($productCollection as $product) {
+    if ($count < 3) {
+        echo "<div style='flex: 1; margin: 10px;'>";
+        echo "<h2><a href='" . $product->getProductUrl() . "'>" . $product->getName() . "</a></h2>";
+        echo "<h3>Price " . $product->getPrice() . "</h3>";
+        echo "<h3> SKU: " . $product->getSku() . "</h3>"; 
+        echo "<h3>Product Image: </h3><br>";
+        foreach ($product->getMediaGalleryImages() as $image) {
+            echo "<img src='" . $image->getUrl() . "' width='250px' height='250px'><br>";
+        }
+        echo "</div>";
+        $count++;
+    } else {
+        break;
+    }
+}
+echo "</div>";
+
