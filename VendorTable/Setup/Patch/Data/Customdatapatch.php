@@ -1,4 +1,5 @@
 <?php
+
 namespace Codilar\VendorTable\Setup\Patch\Data;
  
 use Magento\Eav\Setup\EavSetup;
@@ -8,24 +9,23 @@ use Magento\Framework\Setup\Patch\DataPatchInterface;
  
 class Customdatapatch implements DataPatchInterface
 {
-   private $_moduleDataSetup;
+    private $_moduleDataSetup;
+     private $_eavSetupFactory;
  
-   private $_eavSetupFactory;
+    public function __construct(
+        ModuleDataSetupInterface $moduleDataSetup,
+        EavSetupFactory $eavSetupFactory
+    ) {
+        $this->_moduleDataSetup = $moduleDataSetup;
+        $this->_eavSetupFactory = $eavSetupFactory;
+    }
  
-   public function __construct(
-       ModuleDataSetupInterface $moduleDataSetup,
-       EavSetupFactory $eavSetupFactory
-   ) {
-       $this->_moduleDataSetup = $moduleDataSetup;
-       $this->_eavSetupFactory = $eavSetupFactory;
-   }
- 
-   public function apply()
-   {
+    public function apply()
+    {
        /** @var EavSetup $eavSetup */
-       $eavSetup = $this->_eavSetupFactory->create(['setup' => $this->_moduleDataSetup]);
+        $eavSetup = $this->_eavSetupFactory->create(['setup' => $this->_moduleDataSetup]);
  
-       $eavSetup->addAttribute(\Magento\Catalog\Model\Product::ENTITY, 'custom_datapatch', [
+        $eavSetup->addAttribute(\Magento\Catalog\Model\Product::ENTITY, 'custom_datapatch', [
            'type' => 'text',
            'backend' => '',
            'frontend' => '',
@@ -44,21 +44,21 @@ class Customdatapatch implements DataPatchInterface
            'visible_on_front' => true,
            'used_in_product_listing' => true,
            'unique' => false,
-       ]);
-   }
+        ]);
+    }
  
-   public static function getDependencies()
-   {
-       return [];
-   }
+    public static function getDependencies()
+    {
+        return [];
+    }
  
-   public function getAliases()
-   {
-       return [];
-   }
+    public function getAliases()
+    {
+        return [];
+    }
  
-   public static function getVersion()
-   {
-      return '1.0.0';
-   }
+    public static function getVersion()
+    {
+        return '1.0.0';
+    }
 }

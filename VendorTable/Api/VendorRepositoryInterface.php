@@ -1,8 +1,8 @@
 <?php
+
 namespace Codilar\VendorTable\Api;
 
 use Codilar\VendorTable\Api\Data\VendorInterface;
-
 
 interface VendorRepositoryInterface
 {

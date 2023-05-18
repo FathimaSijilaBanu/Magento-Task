@@ -1,4 +1,5 @@
 <?php
+
 namespace Codilar\VendorTable\Block\Product;
 
 class View extends \Magento\Catalog\Block\Product\View
@@ -8,19 +9,17 @@ class View extends \Magento\Catalog\Block\Product\View
      *
      * @return string
      */
-   
-
     /**
      * Get the current product.
      *
      * @return \Magento\Catalog\Api\Data\ProductInterface|null
      */
     public function getProduct()
-{
-    $product = parent::getProduct();
-    $product->setCustomString($this->getCustomProductString());
-    $customData = $product->getResource()->getAttribute('custom_datapatch')->getFrontend()->getValue($product);
-    $product->setData('custom_datapatch', $customData);
-    return $product;
-}
+    {
+        $product = parent::getProduct();
+        $product->setCustomString($this->getCustomProductString());
+        $customData = $product->getResource()->getAttribute('custom_datapatch')->getFrontend()->getValue($product);
+        $product->setData('custom_datapatch', $customData);
+        return $product;
+    }
 }

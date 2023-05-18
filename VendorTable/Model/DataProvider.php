@@ -1,5 +1,7 @@
 <?php
+
 namespace Codilar\VendorTable\Model;
+
 use Codilar\VendorTable\Model\ResourceModel\Vendor\CollectionFactory;
  
 class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
@@ -34,16 +36,11 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
         if (isset($this->loadedData)) {
             return $this->loadedData;
         }
-
         $items = $this->collection->getItems();
         $this->loadedData = array();
-        
         foreach ($items as $item) {
             $this->loadedData[$item->getId()] = $item->getData();
         }
-
-
         return $this->loadedData;
-
     }
 }

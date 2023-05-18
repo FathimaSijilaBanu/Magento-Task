@@ -8,13 +8,4 @@ class ProductPlugin
     {
         return "Product: " . $result;
     }
-
-    // public function beforeGetPrice(\Magento\Catalog\Model\Product $product)
-    // {
-    //     $originalPrice = $product->getPrice();
-    //     $discountedPrice = $originalPrice - ($originalPrice * 0.1); 
-    //     $product->setPrice($discountedPrice);
-    // }
 }
-
-

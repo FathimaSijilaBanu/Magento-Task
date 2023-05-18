@@ -3,7 +3,6 @@
 namespace Codilar\VendorTable\Controller\Adminhtml\Vendor;
 
 use Magento\Backend\App\Action;
-// use Codilar\VendorTable\Model\VendorFactory;
 use Magento\Framework\Exception\LocalizedException;
 use Codilar\VendorTable\Api\VendorRepositoryInterface;
 use Codilar\VendorTable\Api\Data\VendorInterface;

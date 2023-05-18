@@ -37,7 +37,6 @@ class Add extends Action implements HttpGetActionInterface
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
-        // $resultPage->setActiveMenu('YourVendor_YourModule::your_menu');
         $resultPage->getConfig()->getTitle()->prepend(__('Add New Entity'));
 
         return $resultPage;

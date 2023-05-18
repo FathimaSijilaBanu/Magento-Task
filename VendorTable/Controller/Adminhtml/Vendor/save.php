@@ -46,8 +46,7 @@ class save extends Action
         VendorRepositoryInterface $vendorRepository,
         PageFactory $resultPageFactory,
         SessionManagerInterface $sessionManager
-    )
-    {
+    ) {
         parent::__construct($context);
         $this->vendorRepository = $vendorRepository;
         $this->resultPageFactory = $resultPageFactory;
@@ -58,12 +57,10 @@ class save extends Action
      * Save action
      */
     public function execute()
-    {   
+    {
         $resultRedirect = $this->resultRedirectFactory->create();
         $vendor = $this->vendorRepository->getNew();
-        
-        $data = $this->getRequest()->getPost(); 
-        
+        $data = $this->getRequest()->getPost();
         try {
             if (!empty($data['id'])) {
                 $vendor = $this->vendorRepository->getById($data['id']);
@@ -73,18 +70,14 @@ class save extends Action
             $vendor->setDescription($data['description']);
             $vendor->setEmail($data['email']);
             $this->vendorRepository->save($vendor);
-            
             //check for `back` parameter
-            if ($this->getRequest()->getParam('back')) { 
+            if ($this->getRequest()->getParam('back')) {
                 return $resultRedirect->setPath('*/*/edit', ['id' => $vendor->getId(), '_current' => true, '_use_rewrite' => true]);
             }
-
             $this->messageManager->addSuccess(__('The Record has been saved.'));
-
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             $this->messageManager->addError(__($e->getMessage()));
         }
-        
         return $resultRedirect->setPath('*/*/');
     }
 }

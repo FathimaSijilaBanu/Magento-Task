@@ -9,7 +9,7 @@ class ProductPluginB
     public function beforeGetPrice(Product $subject)
     {
         $result = $subject->getData('price');
-        $subject->setData('price',($result * 1.05));
+        $subject->setData('price', ($result * 1.05));
         return $subject;
     }
 }

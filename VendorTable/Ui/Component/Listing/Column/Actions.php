@@ -1,4 +1,5 @@
 <?php
+
 namespace Codilar\VendorTable\Ui\Component\Listing\Column;
 
 use Magento\Framework\UrlInterface;

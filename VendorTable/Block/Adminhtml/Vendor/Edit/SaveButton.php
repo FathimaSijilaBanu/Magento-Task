@@ -1,5 +1,6 @@
 <?php
-/** 
+
+/**
  * @package   Vendor_Modulename
  * @author    Ricky Thakur (Kapil Dev Singh)
  * @copyright Copyright (c) 2018 Ricky Thakur
@@ -10,9 +11,6 @@ namespace Codilar\VendorTable\Block\Adminhtml\Vendor\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
-/**
- * Class SaveButton
- */
 class SaveButton extends GenericButton implements ButtonProviderInterface
 {
     /**

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Codilar\VendorTable\Model;
 
 use Codilar\VendorTable\Api\Data\VendorInterface;

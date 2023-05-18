@@ -2,7 +2,6 @@
 
 namespace Codilar\VendorTable\Block;
 
-
 use Magento\Checkout\Model\Cart;
 use Magento\Catalog\Api\ProductRepositoryInterface;
 
@@ -72,6 +71,4 @@ class DisplayAttr extends \Magento\Framework\View\Element\Template
         }
         return $additionalData;
     }
-    
-
 }

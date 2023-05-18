@@ -3,17 +3,15 @@
 namespace Codilar\VendorTable\Model;
 
 use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
-
 use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Codilar\VendorTable\Api\Data\VendorInterface;
-
 use Codilar\VendorTable\Api\VendorRepositoryInterface;
 use Codilar\VendorTable\Model\ResourceModel\Vendor;
 use Codilar\VendorTable\Model\ResourceModel\Vendor\CollectionFactory;
 
 /**
- * Class 
+ * Class
  * @author Suman Kar(suman.jis@gmail.com)
  */
 class VendorRepository implements VendorRepositoryInterface
@@ -33,8 +31,6 @@ class VendorRepository implements VendorRepositoryInterface
      * @var VendorCollectionFactory
      */
     private $vendorCollectionFactory;
-
-  
     /**
      * @var CollectionProcessorInterface
      */
@@ -44,7 +40,6 @@ class VendorRepository implements VendorRepositoryInterface
         VendorFactory $vendorFactory,
         Vendor $vendorResource,
         CollectionFactory $vendorCollectionFactory,
-       
         CollectionProcessorInterface $collectionProcessor
     ) {
         $this->vendorFactory = $vendorFactory;
@@ -96,7 +91,6 @@ class VendorRepository implements VendorRepositoryInterface
         }
 
         return true;
-
     }
 
     /**
@@ -107,21 +101,19 @@ class VendorRepository implements VendorRepositoryInterface
      */
     public function getAllVendors($limit = null)
     {
-    $collection = $this->vendorCollectionFactory->create();
+        $collection = $this->vendorCollectionFactory->create();
 
-    if ($limit !== null) {
-        $collection->setPageSize($limit);
-    }
-    
-
-    return $collection->getItems();
+        if ($limit !== null) {
+            $collection->setPageSize($limit);
+        }
+        return $collection->getItems();
     }
 
   /**
- * {@inheritdoc}
- */
-      public function getNew()
-{
-    return $this->vendorFactory->create();
-}
+   * {@inheritdoc}
+   */
+    public function getNew()
+    {
+        return $this->vendorFactory->create();
+    }
 }

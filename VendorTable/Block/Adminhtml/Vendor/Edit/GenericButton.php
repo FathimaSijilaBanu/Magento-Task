@@ -1,5 +1,6 @@
 <?php
-/** 
+
+/**
  * @package   Vendor_Modulename
  * @author    Ricky Thakur (Kapil Dev Singh)
  * @copyright Copyright (c) 2018 Ricky Thakur
@@ -11,9 +12,6 @@
 use Magento\Backend\Block\Widget\Context;
 use Magento\Framework\Registry;
 
-/**
- * Class GenericButton
- */
 class GenericButton
 {
     /**
@@ -57,11 +55,9 @@ class GenericButton
     public function getId()
     {
         $entityId = null;
-        $entityId =  $this->context->getRequest()->getParam('id'); 
-        
+        $entityId =  $this->context->getRequest()->getParam('id');
         return $entityId;
     }
-
     /**
      * Generate url by route and parameters
      *

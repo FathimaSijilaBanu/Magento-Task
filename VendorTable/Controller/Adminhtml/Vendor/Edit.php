@@ -1,9 +1,11 @@
 <?php
+
 /**
  *
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
+
 namespace Codilar\VendorTable\Controller\Adminhtml\Vendor;
 
 use Magento\Backend\App\Action;
@@ -29,13 +31,10 @@ class Edit extends Action
      * @var VendorRepositoryInterface
      */
     private $vendorRepository;
-
-
     /**
      * @var \Codilar\VendorTable\Model\VendorFactory
      */
     private $vendorFactory;
-
     /**
      * @param \Magento\Backend\App\Action\Context $context
      * @param \Magento\Framework\Registry $coreRegistry,
@@ -61,8 +60,6 @@ class Edit extends Action
         $model = $this->vendorFactory->create();
 
         if ($id) {
-          
-            
             if (!$vendor = $this->vendorRepository->getById($id)) {
                 $this->messageManager->addError(__('This entity no longer exists.'));
                 return $this->_redirect('*/*/');

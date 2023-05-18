@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Codilar\VendorTable\Model\ResourceModel\Vendor;
-
 
 use Codilar\VendorTable\Model\Vendor;
 use Codilar\VendorTable\Model\ResourceModel\Vendor as VendorResourceModel;
